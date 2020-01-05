@@ -1,3 +1,12 @@
+<?php
+require_once('../Modele/connect.php');
+session_start();
+$stmt = $bdd->prepare('SELECT * FROM categorie');
+$stmt->execute();
+$result = $stmt->fetchAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +27,27 @@
 
 
 
-    <h1>Hello Home !</h1>
+    <h1>Création de Catégorie</h1>
+
+    <?php
+    echo "Catégorie déja existante : " . "<br/>";
+    foreach ($result as $key => $value) {
+        echo $value["categorie"] . "<br/>";
+    }
+    ?>
+    <br>
+    <br>
+    <form action="../Controler/ControlerNewCategorie.php" method="post">
+        <input type="text" name="u_ncategorie" placeholder="Nom de la Catégorie" id="">
+        <br>
+        <br>
+        <button type="submit">Enregistrer!</button>
+    </form>
+    <?php
+    if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
+        echo '<p>' . $_SESSION['error_msg'] . '</p>';
+    }
+    ?>
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

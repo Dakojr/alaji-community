@@ -1,6 +1,11 @@
 <?php
 require_once('../Modele/connect.php');
 session_start();
+
+$stmtuser = $bdd->prepare('SELECT * FROM users');
+$stmtuser->execute();
+$resultuser = $stmtuser->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -22,24 +27,48 @@ session_start();
 <body>
 
 
+    <h1>Modification d'utilisateur</h1>
 
-    <h1>Création d'utilisateur Formateur</h1>
 
-    <form action="../Controler/ControlerNewFormateur.php" method="post">
+
+    <form action="../Controler/ControlerUpdateUser.php" method="post">
+
+        <?php
+        if (isset($resultrole['role']) && $resultrole['role'] == "admin") {
+
+            echo "<select name='u_id_user'>";
+            foreach ($resultuser as $key => $value2) {
+        ?>
+                <option value='<?php echo $value2["id_user"] ?>'><?php echo $value2["nom"] ?></option>
+        <?php
+            }
+
+
+            echo "</select>";
+
+            echo "
+            <br>
+            <br>
+                 <select name='u_role'>
+                        <option value='admin'>Admin</option>
+                        <option value='formateur'>Formateur</option>
+                        <option value='eleve'>Eleve</option>
+                 </select>
+            <br>
+            <br>";
+        }
+        ?>
+
         <input type="text" name="u_nom" placeholder="nom" id="nom">
         <br>
         <br>
         <input type="text" name="u_prenom" id="" placeholder="prénom">
         <br>
         <br>
-        <select name="u_role">
-            <option value="formateur">Formateur</option>
-        </select>
-        <br>
-        <br>
+
         <input type="date" name="u_date_de_naissance" id="" placeholder="Date de naisance">
         <br>
-        <br>                     
+        <br>
         <input type="text" name="u_pays_de_naissance" id="" placeholder="Pays de naissance">
         <br>
         <br>
@@ -65,23 +94,21 @@ session_start();
         <input type="text" name="u_email" id="" placeholder="Email">
         <br>
         <br>
-        <input type="password" name="u_password" id="" placeholder="Mot de Passe">
+        <input type="password" name="u_password" id="" placeholder="Nouveau Mot de Passe">
         <br>
         <br>
-        <input type="password" name="u_confirm_password" id="" placeholder="confirme mot de passe">
+        <input type="password" name="u_confirm_password" id="" placeholder="Confirmer nouveau MDP">
         <br>
         <br>
         <input type="file" name="u_img_path" id="Photo de profil">
         <br>
         <br>
+        <br>
+        <input type="password" name="u_checkpassword" id="" placeholder="Votre MDP pour confirmer">
+        <br>
+        <br>
         <button type="submit">Enregistrer!</button>
     </form>
-    <?php
-    if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
-        echo '<p>' . $_SESSION['error_msg'] . '</p>';
-    }
-    ?>
-
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
