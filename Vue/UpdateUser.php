@@ -50,6 +50,7 @@ $resultuser = $stmtuser->fetchAll();
             <br>
             <br>
                  <select name='u_role'>
+                 <option value=''>Statut</option>
                         <option value='admin'>Admin</option>
                         <option value='formateur'>Formateur</option>
                         <option value='eleve'>Eleve</option>
@@ -73,6 +74,7 @@ $resultuser = $stmtuser->fetchAll();
         <br>
         <br>
         <select name="u_sexe">
+            <option value="">Sexe</option>
             <option value="Femme">Femme</option>
             <option value="Homme">Homme</option>
             <option value="Autre">Autre</option>
@@ -104,11 +106,17 @@ $resultuser = $stmtuser->fetchAll();
         <br>
         <br>
         <br>
-        <input type="password" name="u_checkpassword" id="" placeholder="Votre MDP pour confirmer">
+        <input type="password" name="u_checkpassword" id="" placeholder="MDP pour validation">
         <br>
         <br>
         <button type="submit">Enregistrer!</button>
     </form>
+    <?php
+    if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
+        echo '<p>' . $_SESSION['error_msg'] . '</p>';
+    }
+    ?>
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

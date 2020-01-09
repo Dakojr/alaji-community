@@ -1,3 +1,19 @@
+<?php
+require_once('../Modele/connect.php');
+session_start();
+$stmt = $bdd->prepare('SELECT * FROM formation');
+$stmt->execute();
+$result = $stmt->fetchAll();
+
+$stmtcat = $bdd->prepare('SELECT * FROM categorie');
+$stmtcat->execute();
+$resultcat = $stmtcat->fetchAll();
+
+$stmtuser = $bdd->prepare('SELECT * FROM users');
+$stmtuser->execute();
+$resultuser = $stmtuser->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +34,91 @@
 
 
 
-    <h1>Hello Home !</h1>
+    <h1>Modification de Formation</h1>
+
+
+
+    <?php
+
+    if (!isset($_POST['selectCategorie'])) {
+        echo "<form action='UpdateFormation.php' method='post'>";
+        echo "Catégorie:";
+        echo "<br>";
+        echo "<br>";
+        echo "<select name='selectCategorie'>";
+        foreach ($resultcat as $key => $value) {
+            echo $value["categorie"] . "<br/>";
+            echo "<option value='" . $value["id_categorie"] . "'>" . $value["categorie"] . "</option>";
+        }
+        echo "<br>";
+        echo "</select>";
+        echo "<br>";
+        echo "<br>";
+        echo "<button type='submit'>Enregistrer!</button>";
+        echo "</form>";
+    }
+
+    if (isset($_POST['selectCategorie'])) {
+    echo "<form action='../Controler/ControlerUpdateFormation.php' method='post'>";
+        echo "<select name='u_id_formation'>";
+        foreach ($result as $key => $value1) {
+            if ($_POST['selectCategorie'] == $value1["id_categorie"]) {
+                echo "<option value='" . $value1["id_formation"] . "'>" . $value1["nom_formation"] . "</option>";
+            }
+        }
+        echo "<br>";
+        echo "</select>";
+        echo "<br>";
+        echo "<br>";
+        ?>
+         <input type="text" name="u_lieu" placeholder="Adresse de la Formation" id="">
+        <br>
+        <br>
+        <input type="text" name="u_nb_eleve_max" placeholder="Nombre d'eleve" id="">
+        <br>
+        <br>
+        <input type="text" name="u_lien_formation_slack" placeholder="Lien Slack de la Formation" id="">
+        <br>
+        <br>
+        <input type="date" name="u_date_de__debut" placeholder="Date de début de Formation" id="">
+        <br>
+        <br>
+        <input type="date" name="u_date_de_fin" placeholder="Date de fin de Formation" id="">
+        <br>
+        <br>
+        Selectionner un Formateur :
+        <br>
+        <select name="u_id_user">
+            <?php
+            foreach ($resultuser as $key => $value2) {
+                if ($value2["role"] == "formateur") {
+
+            ?>
+                    <option value='<?php echo $value2["id_user"] ?>'><?php echo $value2["nom"] ?></option>
+            <?php }
+            }
+            ?>
+        </select>
+        <br>
+        <br>
+        Selectionner une Catégorie :
+        <br>
+        <select name="u_id_categorie">
+            <?php
+            foreach ($resultcat as $key => $value3) {
+            ?>
+                <option value='<?php echo $value3["id_categorie"] ?>'><?php echo $value3["categorie"] ?></option>
+            <?php }
+        echo "<button type='submit'>Enregistrer!</button>";
+        echo "</form>";
+    }
+    ?>
+    
+    <?php
+    if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
+        echo '<p>' . $_SESSION['error_msg'] . '</p>';
+    }
+    ?>
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

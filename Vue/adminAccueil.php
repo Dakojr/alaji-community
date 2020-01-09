@@ -2,7 +2,6 @@
 require_once('../Modele/connect.php');
 session_start();
 unset($_SESSION['error_msg']);
-unset($_SESSION['user']);
 ?>
 
 <!DOCTYPE html>
