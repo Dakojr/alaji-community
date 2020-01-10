@@ -26,8 +26,8 @@
 <form method="post" action="../Controler/ControlerAuth.php">
 Nom : <input type="text" name="nom" size="12"><br>
 Prénom : <input type="text" name="prenom" size="12">
-date de naissance : <input type="date" name="date de naissance" size="12">
-pays de naissance : <input type="text" name="pays de naissance" size="12"><br>
+date de naissance : <input type="date" name="date_de_naissance" size="12">
+pays de naissance : <input type="text" name="pays_de_naissance" size="12"><br>
 sexe : <input type="text" name="sexe" size="12"><br>
 adresse : <input type="text" name="adresse" size="12"><br>
 ville : <input type="text" name="ville" size="12">
@@ -35,7 +35,7 @@ code postal : <input type="text" name="codde postal" size="12">
 telephone : <input type="text" name="telephone" size="12"><br>
 password : <input type="text" name="password" size="12">
 confirmer password : <input type="text" name="confirmer password" size="12">
-image de profil : <input type="text" name="image de profil" size="12"><br>
+image de profil : <input type="text" name="img_path" size="12"><br>
 <input type="submit" value="OK">
 </form>
 
