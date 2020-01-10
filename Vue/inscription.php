@@ -18,7 +18,38 @@
 
 
 
-    <h1>Hello Home !</h1>
+    <h1>Bonjour à tous les Alajiens !</h1>
+    <p>inscription</p>
+    <p>Rejoins nous !!!!</p>
+    <p>ait confiance !!!</p>
+    
+<form method="post" action="verif.php">
+Nom : <input type="text" name="nom" size="12"><br>
+Prénom : <input type="text" name="prenom" size="12">
+date de naissance : <input type="text" name="date de naissance" size="12">
+pays de naissance : <input type="text" name="pays de naissance" size="12"><br>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Sexe
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">homme</a>
+    <a class="dropdown-item" href="#">femme</a>
+    <a class="dropdown-item" href="#">ENORME</a>
+  </div>
+</div>
+adresse : <input type="text" name="adresse" size="12"><br>
+ville : <input type="text" name="ville" size="12">
+code postal : <input type="text" name="codde postal" size="12">
+telephone : <input type="text" name="telephone" size="12"><br>
+password : <input type="text" name="password" size="12">
+repeter password : <input type="text" name="repeter password" size="12">
+image de profil : <input type="text" name="image de profil" size="12"><br>
+<input type="submit" value="OK">
+</form>
+
+
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
