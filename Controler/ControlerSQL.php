@@ -118,5 +118,3 @@ function ID_and_nom_of_formateur() //cherche les ID et les noms de tout les form
     return $result;
 }
 
-$a = all_categorie();
-var_dump($a);

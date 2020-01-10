@@ -7,6 +7,8 @@ $a = all_categorie();
 
 var_dump($a);
 
+// die();
+
 // $stmt = $bdd->prepare('SELECT * FROM formation');
 // $stmt->execute();
 // $result = $stmt->fetchAll();
