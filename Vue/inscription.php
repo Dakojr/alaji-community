@@ -26,24 +26,16 @@
 <form method="post" action="../Controler/ControlerAuth.php">
 Nom : <input type="text" name="nom" size="12"><br>
 Prénom : <input type="text" name="prenom" size="12">
-date de naissance : <input type="date" name="date de naissance" size="12">
-pays de naissance : <input type="text" name="pays de naissance" size="12"><br>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sexe
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">homme</a>
-    <a class="dropdown-item" href="#">femme</a>
-  </div>
-</div>
+date de naissance : <input type="date" name="date_de_naissance" size="12">
+pays de naissance : <input type="text" name="pays_de_naissance" size="12"><br>
+sexe : <input type="text" name="sexe" size="12"><br>
 adresse : <input type="text" name="adresse" size="12"><br>
 ville : <input type="text" name="ville" size="12">
 code postal : <input type="text" name="codde postal" size="12">
 telephone : <input type="text" name="telephone" size="12"><br>
 password : <input type="text" name="password" size="12">
 confirmer password : <input type="text" name="confirmer password" size="12">
-image de profil : <input type="text" name="image de profil" size="12"><br>
+image de profil : <input type="text" name="img_path" size="12"><br>
 <input type="submit" value="OK">
 </form>
 
@@ -52,7 +44,7 @@ image de profil : <input type="text" name="image de profil" size="12"><br>
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
+    <!- - Bootstrap tooltips -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
