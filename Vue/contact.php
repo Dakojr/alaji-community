@@ -36,6 +36,7 @@
 </head>
 
 <body>
+    <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark border-bottom" style="background-color: #FDD835">
         <a class="navbar-brand" href="index.php"><img style="background-color: white; border-radius:200px;padding:5px;width:70px;" src="https://nsa40.casimages.com/img/2020/01/10/200110014602150184.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,22 +46,28 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <span class="sr-only">(current)</span>
-                    </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn-link rounded-pill" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formations</a>
+                    <a class="nav-link dropdown-toggle btn-link rounded-lg ml-3 p-4 text-dark" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formations</a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item waves-light" href="#">Toutes les formations</a>
                         <a class="dropdown-item waves-light" href="#">Formations par catégories</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle btn-link rounded-lg ml-3 p-4 text-dark" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                        <a class="dropdown-item waves-light" href="#">Link1</a>
+                        <a class="dropdown-item waves-light" href="#">Link2</a>
+                    </div>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item">
-                    <a class="nav-link waves-light btn-link rounded-circle" href="inscription.php">Inscription</a>
+                    <a class="nav-link waves-light btn-link rounded-lg mr-3 p-4 text-dark" href="inscription.php">Inscription</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-light btn-link rounded-circle" href="connexion.php">Connexion</a>
+                    <a class="nav-link waves-light btn-link rounded-lg mr-3 p-4 text-dark" href="connexion.php">Connexion</a>
                 </li>
             </ul>
         </div>
@@ -275,5 +282,68 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 </body>
+<!-- Footer -->
+<footer class="page-footer font-small pt-4">
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3 pl-5">
+                <!-- Content -->
+                <h5 class="text-uppercase" style="color:#FDD835;"><i class="fas fa-angle-double-right"></i> ALAJI Formations</h5>
+                <p class="text-justify" style="padding-right:40px;">Gros texte d'la mortkitu pour présenter ALAJI eheheh MDR lol j'tombedemachaisedr Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus. Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.
+                </p>
+            </div>
+            <!-- Grid column -->
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+                <!-- Links -->
+                <h5 class="text-uppercase" style="color:#FDD835;"><i class="fas fa-angle-double-right"></i> LIENS UTILES</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#!">Link 1</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 2</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 3</a>
+                    </li>
+                    <li>
+                        <a href="#!">Link 4</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+                <!-- Links -->
+                <h5 class="text-uppercase" style="color:#FDD835;"><i class="fas fa-angle-double-right"></i> CONTACT</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fas fa-home mr-3"></i> 6 Route de l’Aviation, 54600 Villers-lès-Nancy
+                    </li>
+                    <li>
+                        <i class="fas fa-phone mr-3"></i> 03 83 57 58 32
+                    </li>
+                    <li>
+                        <i class="fas fa-print mr-3"></i> 03 83 57 65 75
+                    </li>
+                </ul>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </div>
+    <!-- Footer Links -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="background-color: #FDD835;">© 2020 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<!-- Footer -->
 
 </html>
