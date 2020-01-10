@@ -1,11 +1,11 @@
 <?php
-// require_once('../Modele/connect.php');
-
 require_once('../Controler/ControlerSQL.php');
-
+$c = IDcategorie_and_nomformation();
 $a = all_categorie();
+$b = ID_and_nom_of_formateur();
 
-var_dump($a);
+
+
 
 // $stmt = $bdd->prepare('SELECT * FROM formation');
 // $stmt->execute();
@@ -45,9 +45,9 @@ var_dump($a);
     <?php
     echo "Catégorie: " . "<br/>";
     echo "<br>";
-    foreach ($resultcat as $key => $value) {
+    foreach ($a as $key => $value) {
         echo $value["categorie"] . "<br/>";
-        foreach ($result as $key => $value1) {
+        foreach ($c as $key => $value1) {
             if ($value["id_categorie"] == $value1["id_categorie"]) {
                 echo $value1["nom_formation"] . "<br/>";
             }
@@ -79,13 +79,10 @@ var_dump($a);
         <select name="u_id_user">
         <option disabled selected value> -- selectionner un Formateur -- </option>
             <?php
-            foreach ($resultuser as $key => $value2) {
-                if ($value2["role"] == "formateur") {
-
+            foreach ($b as $key => $value2) {
             ?>
                     <option value='<?php echo $value2["id_user"] ?>'><?php echo $value2["nom"] ?></option>
             <?php }
-            }
             ?>
         </select>
         <br>
