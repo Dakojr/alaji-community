@@ -1,5 +1,13 @@
 <?php
 require_once('../Controler/ControlerSQL.php');
+$c = all_admin();
+session_start();
+foreach ($c as $key => $value3) {
+    if ($value3["id_user"] != $_SESSION['user']['id_user']){
+        $_SESSION['error_msg'] = "t'es pas admin";
+        header('Location: ../Vue/index.php');
+        die();}}
+
 ?>
 
 <!DOCTYPE html>
