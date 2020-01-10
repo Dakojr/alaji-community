@@ -20,7 +20,7 @@
 
 
     <h1>Bonjour à tous les Alajiens !</h1>
-    <form method="post" action="verif.php">
+    <form method="post" action="ControlerAuth.php">
 Nom : <input type="text" name="nom" size="12"><br>
 password : <input type="text" name="prenom" size="12">
 <input type="submit" value="OK">

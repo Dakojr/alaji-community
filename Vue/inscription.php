@@ -23,10 +23,10 @@
     <p>Rejoins nous !!!!</p>
     <p>ait confiance !!!</p>
     
-<form method="post" action="verif.php">
+<form method="post" action="ControlerAuth.php">
 Nom : <input type="text" name="nom" size="12"><br>
 Prénom : <input type="text" name="prenom" size="12">
-date de naissance : <input type="text" name="date de naissance" size="12">
+date de naissance : <input type="date" name="date de naissance" size="12">
 pays de naissance : <input type="text" name="pays de naissance" size="12"><br>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -35,7 +35,6 @@ pays de naissance : <input type="text" name="pays de naissance" size="12"><br>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">homme</a>
     <a class="dropdown-item" href="#">femme</a>
-    <a class="dropdown-item" href="#">ENORME</a>
   </div>
 </div>
 adresse : <input type="text" name="adresse" size="12"><br>
