@@ -6,10 +6,10 @@ session_start();
 
 var_dump($_POST);
 
-// die();
+ die();
 
-// $_SESSION['user'] = $_POST['u_email'];
-// header('Location: ../Vue/profil.php');
+ $_SESSION['nom'] = $_POST['u_email'];
+ header('Location: ../Vue/profil.php');
 
 if ($_GET['nom'] == "connect") {
     if (!empty($_POST['u_email']) && !empty($_POST['u_password'])) {
