@@ -24,7 +24,8 @@ function users_by_ID() //cherche les données d'un utilisateur par son ID
     require_once('../Modele/connect.php');
     $stmt = $bdd->prepare('SELECT `id_user`, `nom`, `prenom`, `role`, `date_de_naissance`, `pays_de_naissance`, `sexe`, `adresse`, `ville`, `code_postal`, `telephone`, `email`, `img_path` FROM `users` WHERE ID_user = "1"');
     $stmt->execute();
-    return ($result = $stmt->fetchall());
+    $result = $stmt->fetchall();
+    return $result;
 }
 function users_by_formation() //cherche les données d'un utilisateur par sa formation
 {

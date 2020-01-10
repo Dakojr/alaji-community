@@ -1,11 +1,11 @@
 <?php
-session_start();
 // require_once('../Modele/connect.php');
-require_once('../Controler/ControloerSQL.php');
 
-$a= all_formation();
-$b= all_users();
-$c= all_categorie();
+require_once('../Controler/ControlerSQL.php');
+
+$a = all_categorie();
+
+var_dump($a);
 
 // $stmt = $bdd->prepare('SELECT * FROM formation');
 // $stmt->execute();

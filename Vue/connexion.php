@@ -11,6 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Community Alaji</title>
 </head>
 
@@ -18,7 +19,17 @@
 
 
 
-    <h1>Hello Home !</h1>
+    <h1>Bonjour à tous les Alajiens !</h1>
+    <form method="post" action="ControlerAuth.php">
+Nom : <input type="text" name="nom" size="12"><br>
+password : <input type="text" name="prenom" size="12">
+<input type="submit" value="OK">
+</form>
+
+
+
+
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

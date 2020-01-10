@@ -1,0 +1,1 @@
+10-Jan-2020 10:23:35 - ERREUR BDD : SQLSTATE[HY000] [1049] Base 'community_alaji' inconnue
