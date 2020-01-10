@@ -60,7 +60,7 @@ if ($_GET['nom'] == "register") {
     $adresse = filter_input(INPUT_POST, 'u_adresse', FILTER_DEFAULT);
 
 
-    $numberphone = filter_input(INPUT_POST, 'u_numberphone', FILTER_DEFAULT);
+    $telephone = filter_input(INPUT_POST, 'u_telephone', FILTER_DEFAULT);
 
 
     $dateTmp = date('Y/m/d');
