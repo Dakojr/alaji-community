@@ -6,11 +6,7 @@ session_start();
 
 var_dump($_POST);
 
-<<<<<<< HEAD
- //die();
-=======
 //  die();
->>>>>>> origin/master
 
 //  $_SESSION['nom'] = $_POST['u_email'];
 //  header('Location: ../Vue/profil.php');
