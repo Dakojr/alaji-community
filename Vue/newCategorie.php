@@ -1,9 +1,11 @@
 <?php
-require_once('../Modele/connect.php');
+// require_once('../Modele/connect.php');
+require_once('../Controler/ControloerSQL.php');
 session_start();
-$stmt = $bdd->prepare('SELECT * FROM categorie');
-$stmt->execute();
-$result = $stmt->fetchAll();
+$a= all_categorie();
+// $stmt = $bdd->prepare('SELECT * FROM categorie');
+// $stmt->execute();
+// $result = $stmt->fetchAll();
 
 ?>
 
