@@ -22,7 +22,7 @@
         .bg {
             /* The image used */
             background-image: url("../assets/img/Background_Formations.jpg");
-            background-color: rgba(117, 190, 218, 0.5);
+            background-color: hsl(50, 33%, 25%);
             /* Full height */
             height: 100%;
 
