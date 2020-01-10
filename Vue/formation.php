@@ -1,3 +1,10 @@
+<?php
+
+require_once('../Controler/ControlerSQL.php');
+
+$formations = all_formation();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,6 +91,7 @@
 
             <p style="color:white;" class="py-3 text-center">Voici les différentes formations qu'Alaji propose...</p>
             <!--/.Bakground_Image -->
+
 </body>
 
 </div>
