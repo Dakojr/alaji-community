@@ -15,6 +15,8 @@ $resultcat = $stmtcat->fetchAll();
 $stmtuser = $bdd->prepare('SELECT * FROM users');
 $stmtuser->execute();
 $resultuser = $stmtuser->fetchAll();
+
+var_dump($resultcat);
 ?>
 
 <!DOCTYPE html>

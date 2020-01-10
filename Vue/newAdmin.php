@@ -1,7 +1,5 @@
 <?php
-require_once('../Modele/connect.php');
-session_start();
-
+require_once('../Controler/ControloerSQL.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
