@@ -1,5 +1,5 @@
 <?php
-require_once('../Controler/ControloerSQL.php');
+require_once('../Controler/ControlerSQL.php');
 $a= all_categorie();
 ?>
 

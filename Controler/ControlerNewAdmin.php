@@ -30,7 +30,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 if (
     !empty($_POST['u_nom']) && !empty($_POST['u_prenom']) && !empty($_POST['u_role']) && !empty($_POST['u_date_de_naissance']) && !empty($_POST['u_pays_de_naissance']) && !empty($_POST['u_sexe']) && !empty($_POST['u_adresse']) && !empty($_POST['u_ville']) && !empty($_POST['u_code_postal']) && !empty($_POST['u_telephone']) && !empty($_POST['u_email']) && !empty($_POST['u_password']) && !empty($_POST['u_img_path'])
 ) {
-    $stmt = $bdd->prepare('SELECT * FROM users WHERE email= :mail');
+    $stmt = $GLOBALS['bdd']->prepare('SELECT * FROM users WHERE email= :mail');
     $stmt->bindParam("mail", $_POST['u_email']);
     $stmt->execute();
     $result = $stmt->fetch();
@@ -40,7 +40,7 @@ if (
                 if (filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/")))) {
                     if ($_POST['u_password'] == $_POST['u_confirm_password']) {
                         $hashage = password_hash($_POST['u_password'], PASSWORD_DEFAULT);
-                        $stmt = $bdd->prepare("INSERT INTO users (nom, prenom, role, date_de_naissance, pays_de_naissance, sexe, adresse, ville, code_postal, telephone, email, password, img_path) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                        $stmt = $GLOBALS['bdd']->prepare("INSERT INTO users (nom, prenom, role, date_de_naissance, pays_de_naissance, sexe, adresse, ville, code_postal, telephone, email, password, img_path) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
                         $stmt->execute(array($_POST['u_nom'], $_POST['u_prenom'], "admin", $_POST['u_date_de_naissance'], $_POST['u_pays_de_naissance'], $_POST['u_sexe'], $_POST['u_adresse'], $_POST['u_ville'], $_POST['u_code_postal'], $_POST['u_telephone'], $_POST['u_email'], $hashage, $_POST['u_img_path']));
                         $_SESSION['error_msg'] = '';
                         header('Location: ../Vue/adminAccueil.php');
