@@ -1,17 +1,23 @@
 <?php
-require_once('../Modele/connect.php');
 session_start();
-$stmt = $bdd->prepare('SELECT * FROM formation');
-$stmt->execute();
-$result = $stmt->fetchAll();
+// require_once('../Modele/connect.php');
+require_once('../Controler/ControloerSQL.php');
 
-$stmtcat = $bdd->prepare('SELECT * FROM categorie');
-$stmtcat->execute();
-$resultcat = $stmtcat->fetchAll();
+$a= all_formation();
+$b= all_users();
+$c= all_categorie();
 
-$stmtuser = $bdd->prepare('SELECT * FROM users');
-$stmtuser->execute();
-$resultuser = $stmtuser->fetchAll();
+// $stmt = $bdd->prepare('SELECT * FROM formation');
+// $stmt->execute();
+// $result = $stmt->fetchAll();
+
+// $stmtcat = $bdd->prepare('SELECT * FROM categorie');
+// $stmtcat->execute();
+// $resultcat = $stmtcat->fetchAll();
+
+// $stmtuser = $bdd->prepare('SELECT * FROM users');
+// $stmtuser->execute();
+// $resultuser = $stmtuser->fetchAll();
 
 
 ?>

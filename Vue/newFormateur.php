@@ -1,5 +1,7 @@
 <?php
-require_once('../Modele/connect.php');
+// require_once('../Modele/connect.php');
+require_once('../Controler/ControloerSQL.php');
+
 session_start();
 ?>
 
