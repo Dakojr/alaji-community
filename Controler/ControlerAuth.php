@@ -79,7 +79,7 @@ if ($_GET['nom'] == "register") {
                     if ($_POST['u_password'] == $_POST['u_confirmer_password']) {
                         $hashage = password_hash($_POST['u_password'], PASSWORD_DEFAULT);
                         $stmt = $bdd->prepare("INSERT INTO users (email, password, date_de_naissance, nom, prenom) VALUES (?,?,?,?,?)");
-                        $stmt->execute(array($_POST['u_email'], $hashage, $_POST['u_date_de_maissance'], $_POST['u_nom'], $_POST['u_prenom'], 'eleves', 'une img'));
+                        $stmt->execute(array($_POST['u_email'], $hashage, $_POST['u_date_de_maissance'], $_POST['u_nom'], $_POST['u_prenom'], 'eleves', 'une img path'));
                         $_SESSION['error_msg'] = '';
                         header('Location: ../Vue/connexion.php');
                     } else {
