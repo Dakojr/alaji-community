@@ -23,7 +23,7 @@
     <p>Rejoins nous !!!!</p>
     <p>ait confiance !!!</p>
     
-<form method="post" action="ControlerAuth.php">
+<form method="post" action="../Controler/ControlerAuth.php">
 Nom : <input type="text" name="nom" size="12"><br>
 Prénom : <input type="text" name="prenom" size="12">
 date de naissance : <input type="date" name="date de naissance" size="12">
@@ -42,7 +42,7 @@ ville : <input type="text" name="ville" size="12">
 code postal : <input type="text" name="codde postal" size="12">
 telephone : <input type="text" name="telephone" size="12"><br>
 password : <input type="text" name="password" size="12">
-repeter password : <input type="text" name="repeter password" size="12">
+confirmer password : <input type="text" name="confirmer password" size="12">
 image de profil : <input type="text" name="image de profil" size="12"><br>
 <input type="submit" value="OK">
 </form>
