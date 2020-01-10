@@ -15,12 +15,8 @@ function all_users() //cherche tout les données de la table users
     $result = $stmt->fetchall();
     return $result;
 }
-<<<<<<< HEAD
-function users_by_ID() //cherche les données d'un utilisateur par son ID
-=======
 
 function all_categorie() //cherche tout les données de la table cétégorie
->>>>>>> origin/master
 {
     $stmt = $GLOBALS['bdd']->prepare('SELECT `id_user`, `nom`, `prenom`, `role`, `date_de_naissance`, `pays_de_naissance`, `sexe`, `adresse`, `ville`, `code_postal`, `telephone`, `email`, `img_path` FROM `users` WHERE ID_user = "1"');
     $stmt->execute();
@@ -35,13 +31,13 @@ function users_by_ID() //cherche les données d'un utilisateur par son ID
     $result = $stmt->fetchall();
     return $result;
 }
-function users_by_formation() //cherche les données d'un utilisateur par sa formation
-{
-    $stmt = $GLOBALS['bdd']->prepare('SELECT * FROM categorie');
-    $stmt->execute();
-    $result = $stmt->fetchall();
-    return $result;
-}
+// function users_by_formation() //cherche les données d'un utilisateur par sa formation
+// {
+//     $stmt = $GLOBALS['bdd']->prepare('SELECT * FROM categorie');
+//     $stmt->execute();
+//     $result = $stmt->fetchall();
+//     return $result;
+// }
 function all_formation() //cherche tout les données de la table formation
 {
     $stmt = $GLOBALS['bdd']->prepare('SELECT * FROM formation ');
@@ -75,12 +71,8 @@ function ID_and_nom_formateur() //cherche les ID et les nom de tout les formateu
     $stmt = $GLOBALS['bdd']->prepare('SELECT `id_user`, `nom` FROM `users` WHERE role = "formateur"');
     $stmt->execute();
     $result = $stmt->fetchall();
-<<<<<<< HEAD
-    return $result;}
-=======
     return $result;
 }
->>>>>>> origin/master
 function IDcategorie_and_nomformation() //cherche les ID des catégories de formation et les noms des formations
 {
     $stmt = $GLOBALS['bdd']->prepare('SELECT `nom_formation`,`id_categorie` FROM `formation`');
@@ -102,18 +94,28 @@ function ID_and_nom_of_formateur() //cherche les ID et les noms de tout les form
     $result = $stmt->fetchall();
     return $result;
 }
-// function formation_by_categorie()
-// {
-//     $stmt = $GLOBALS['bdd']->prepare('SELECT "id_user","nom"  FROM users WHERE categorie = "1"');
-//     $stmt->execute();
-//     $result = $stmt->fetch();
-//     return $result;
-// }
-<<<<<<< HEAD
-$a = all_categorie();
-var_dump($a);
+function users_by_formation() // 
+{
+    $stmt = $GLOBALS['bdd']->prepare("SELECT u.id_user, u.nom, u.prenom, u.role, u.date_de_naissance, u.pays_de_naissance, u.sexe, u.adresse, u.ville, u.code_postal, u.telephone, u.email, u.img_path, f.id_formation, f.nom_formation, f.lieu, f.nb_eleve_max, f.lien_foarmation_slack, f.date_de__debut, f.date_de_fin, ef.id_formation, ef.id_user FROM users as u, formation as f, eleve_formation as ef  WHERE u.id_user=ef.id_user AND f.id_formation = ef.id_formation and f.id_formation = '1'");
+    $stmt->execute();
+    $result = $stmt->fetchall();
+    return $result;
+}
 
-$b = all_admin();
-var_dump($b);
-=======
->>>>>>> origin/master
+function formation_by_categorie()
+{
+    $stmt = $GLOBALS['bdd']->prepare("SELECT f.id_formation, f.nom_formation, f.lieu, f.nb_eleve_max,f.lien_foarmation_slack, f.date_de__debut, f.date_de_fin, f.id_user, c.id_categorie, c.categorie FROM formation as f, categorie as c WHERE f.id_categorie = '1' and f.id_categorie= c.id_categorie");
+    $stmt->execute();
+    $result = $stmt->fetch();
+    return $result;
+}
+
+function formateur_by_formation()
+{
+    $stmt = $GLOBALS['bdd']->prepare("SELECT u.id_user, u.nom, u.prenom, u.role, u.date_de_naissance, u.pays_de_naissance, u.sexe, u.adresse, u.ville, u.code_postal, u.telephone, u.email, u.img_path, f.nom_formation,f.nb_eleve_max FROM users as u, formation as f WHERE role = 'formateur' AND u.id_user = f.id_user AND f.id_formation = '2'");
+    $stmt->execute();
+    $result = $stmt->fetch();
+    return $result;
+}
+$a = formateur_by_formation();
+var_dump($a);
