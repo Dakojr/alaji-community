@@ -1,0 +1,8 @@
+10-Jan-2020 10:22:28 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
+10-Jan-2020 12:29:57 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
+10-Jan-2020 12:30:13 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
+10-Jan-2020 13:47:46 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
+10-Jan-2020 13:48:00 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
+10-Jan-2020 13:49:17 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
+10-Jan-2020 14:33:46 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
+10-Jan-2020 14:34:02 - ERREUR BDD : SQLSTATE[HY000] [1049] Unknown database 'community_alaji'
