@@ -23,7 +23,7 @@ if ($_GET['nom'] == "connect") {
         $result = $stmt->fetch();
         if ($result !== false) {
             if (password_verify($_POST['u_password'], $result['password'])) {
-                // var_dump($result);
+                 //var_dump($result);
                 $_SESSION['nom'] = $result;
                 // unset($_SESSION['error_msg']);
                 $_SESSION['error_msg'] = '';
