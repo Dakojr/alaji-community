@@ -34,14 +34,14 @@ $resultuser = $stmtuser->fetchAll();
     <form action="../Controler/ControlerUpdateUser.php" method="post">
 
         <?php
-        if (isset($resultrole['role']) && $resultrole['role'] == "admin") {
+        // if (isset($resultrole['role']) && $resultrole['role'] == "admin") {
 
             echo "<select name='u_id_user'>";
             foreach ($resultuser as $key => $value2) {
         ?>
                 <option value='<?php echo $value2["id_user"] ?>'><?php echo $value2["nom"] ?></option>
         <?php
-            }
+            // }
 
 
             echo "</select>";

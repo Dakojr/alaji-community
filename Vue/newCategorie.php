@@ -4,7 +4,6 @@ session_start();
 $stmt = $bdd->prepare('SELECT * FROM categorie');
 $stmt->execute();
 $result = $stmt->fetchAll();
-
 ?>
 
 <!DOCTYPE html>

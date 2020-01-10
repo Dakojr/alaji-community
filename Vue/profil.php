@@ -18,7 +18,17 @@
 
 
 
-    <h1>Hello Home !</h1>
+    <header></header>
+    <main class="container">
+        <h2 class="text-center">Profil de !PHP!</h2>        
+
+        <img src="../assets/img/troun_noir" alt="" height="130">
+    </main>
+    <footer>
+
+    </footer>
+
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

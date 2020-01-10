@@ -59,7 +59,7 @@ $resultuser = $stmtuser->fetchAll();
     }
 
     if (isset($_POST['selectCategorie'])) {
-    echo "<form action='../Controler/ControlerUpdateFormation.php' method='post'>";
+        echo "<form action='../Controler/ControlerUpdateFormation.php' method='post'>";
         echo "<select name='u_id_formation'>";
         foreach ($result as $key => $value1) {
             if ($_POST['selectCategorie'] == $value1["id_categorie"]) {
@@ -70,8 +70,8 @@ $resultuser = $stmtuser->fetchAll();
         echo "</select>";
         echo "<br>";
         echo "<br>";
-        ?>
-         <input type="text" name="u_lieu" placeholder="Adresse de la Formation" id="">
+    ?>
+        <input type="text" name="u_lieu" placeholder="Adresse de la Formation" id="">
         <br>
         <br>
         <input type="text" name="u_nb_eleve_max" placeholder="Nombre d'eleve" id="">
@@ -108,26 +108,26 @@ $resultuser = $stmtuser->fetchAll();
             foreach ($resultcat as $key => $value3) {
             ?>
                 <option value='<?php echo $value3["id_categorie"] ?>'><?php echo $value3["categorie"] ?></option>
-            <?php }
-        echo "<button type='submit'>Enregistrer!</button>";
-        echo "</form>";
-    }
-    ?>
-    
-    <?php
-    if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
-        echo '<p>' . $_SESSION['error_msg'] . '</p>';
-    }
-    ?>
+        <?php }
+            echo "<button type='submit'>Enregistrer!</button>";
+            echo "</form>";
+        }
+        ?>
 
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+        <?php
+        if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
+            echo '<p>' . $_SESSION['error_msg'] . '</p>';
+        }
+        ?>
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 </body>
 
 </html>
