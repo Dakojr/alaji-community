@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,6 +47,12 @@
     </form>
 
 
+    <?php
+
+    if (isset($_SESSION['error_msg'])) {
+        echo $_SESSION['error_msg'];
+    }
+    ?>
 
 
     <!-- JQuery -->
