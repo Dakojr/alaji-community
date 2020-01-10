@@ -1,11 +1,6 @@
 <?php
 require_once('../Controler/ControlerSQL.php');
 $c = all_users();
-
-$stmtuser = $bdd->prepare('SELECT * FROM users');
-$stmtuser->execute();
-$resultuser = $stmtuser->fetchAll();
-
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +24,9 @@ $resultuser = $stmtuser->fetchAll();
 
     <h1>Modification d'utilisateur</h1>
 <?php
-foreach ($c as $key => $value2) {
-    if ($value2["id_user"] == $_SESSION['user']){
-$resultrole = $value2["role"];}}
+foreach ($c as $key => $value3) {
+    if ($value3["id_user"] == $_SESSION['user']['id_user']){
+$resultrole = $value3["role"];}}
 ?>
 
 
