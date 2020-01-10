@@ -1,11 +1,12 @@
 <?php
 // require_once('../Modele/connect.php');
-
 require_once('../Controler/ControlerSQL.php');
 
-$a = all_categorie();
+$a = all_users();
 
 var_dump($a);
+
+die();
 
 // die();
 
