@@ -1,17 +1,25 @@
 <?php
-require_once('../Modele/connect.php');
-session_start();
-$stmt = $bdd->prepare('SELECT * FROM formation');
-$stmt->execute();
-$result = $stmt->fetchAll();
+// require_once('../Modele/connect.php');
 
-$stmtcat = $bdd->prepare('SELECT * FROM categorie');
-$stmtcat->execute();
-$resultcat = $stmtcat->fetchAll();
+require_once('../Controler/ControlerSQL.php');
 
-$stmtuser = $bdd->prepare('SELECT * FROM users');
-$stmtuser->execute();
-$resultuser = $stmtuser->fetchAll();
+$a = all_categorie();
+
+var_dump($a);
+
+// die();
+
+// $stmt = $bdd->prepare('SELECT * FROM formation');
+// $stmt->execute();
+// $result = $stmt->fetchAll();
+
+// $stmtcat = $bdd->prepare('SELECT * FROM categorie');
+// $stmtcat->execute();
+// $resultcat = $stmtcat->fetchAll();
+
+// $stmtuser = $bdd->prepare('SELECT * FROM users');
+// $stmtuser->execute();
+// $resultuser = $stmtuser->fetchAll();
 
 
 ?>
@@ -71,6 +79,7 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner un Formateur :
         <br>
         <select name="u_id_user">
+        <option disabled selected value> -- selectionner un Formateur -- </option>
             <?php
             foreach ($resultuser as $key => $value2) {
                 if ($value2["role"] == "formateur") {
@@ -86,6 +95,7 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner une Catégorie :
         <br>
         <select name="u_id_categorie">
+        <option disabled selected value> -- Selectionner une Catégorie -- </option>
             <?php
             foreach ($resultcat as $key => $value3) {
             ?>

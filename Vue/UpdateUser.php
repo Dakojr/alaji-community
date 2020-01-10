@@ -37,6 +37,7 @@ $resultuser = $stmtuser->fetchAll();
         if (isset($resultrole['role']) && $resultrole['role'] == "admin") {
 
             echo "<select name='u_id_user'>";
+           echo  "<option disabled selected value> -- selectionner un Utilisateur -- </option>";
             foreach ($resultuser as $key => $value2) {
         ?>
                 <option value='<?php echo $value2["id_user"] ?>'><?php echo $value2["nom"] ?></option>
@@ -51,6 +52,7 @@ $resultuser = $stmtuser->fetchAll();
             <br>
                  <select name='u_role'>
                  <option value=''>Statut</option>
+                 <option disabled selected value> -- Selectionner un role -- </option>
                         <option value='admin'>Admin</option>
                         <option value='formateur'>Formateur</option>
                         <option value='eleve'>Eleve</option>
@@ -74,7 +76,7 @@ $resultuser = $stmtuser->fetchAll();
         <br>
         <br>
         <select name="u_sexe">
-            <option value="">Sexe</option>
+        <option disabled selected value> -- Changer le sexe -- </option>
             <option value="Femme">Femme</option>
             <option value="Homme">Homme</option>
             <option value="Autre">Autre</option>
