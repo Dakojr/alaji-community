@@ -3,7 +3,6 @@
 $dsn    = "mysql:host=localhost;dbname=community_alaji";
 $dbuser = "root";
 $dbpass = "";
-
 try {
     $GLOBALS['bdd'] = new PDO($dsn, $dbuser, $dbpass);
     $GLOBALS['bdd']->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

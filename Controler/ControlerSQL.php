@@ -15,21 +15,27 @@ function all_users() //cherche tout les données de la table users
     $result = $stmt->fetchall();
     return $result;
 }
+<<<<<<< HEAD
 function users_by_ID() //cherche les données d'un utilisateur par son ID
+=======
+
+function all_categorie() //cherche tout les données de la table cétégorie
+>>>>>>> origin/master
 {
     $stmt = $GLOBALS['bdd']->prepare('SELECT `id_user`, `nom`, `prenom`, `role`, `date_de_naissance`, `pays_de_naissance`, `sexe`, `adresse`, `ville`, `code_postal`, `telephone`, `email`, `img_path` FROM `users` WHERE ID_user = "1"');
     $stmt->execute();
     $result = $stmt->fetch();
     return $result;
 }
-function users_by_formation() //cherche les données d'un utilisateur par sa formation
+
+function users_by_ID() //cherche les données d'un utilisateur par son ID
 {
     $stmt = $GLOBALS['bdd']->prepare('SELECT `id_user`, `nom`, `prenom`, `role`, `date_de_naissance`, `pays_de_naissance`, `sexe`, `adresse`, `ville`, `code_postal`, `telephone`, `email`, `img_path` FROM `users` WHERE ID = "1"');
     $stmt->execute();
     $result = $stmt->fetchall();
     return $result;
 }
-function all_categorie() //cherche tout les données de la table cétégorie
+function users_by_formation() //cherche les données d'un utilisateur par sa formation
 {
     $stmt = $GLOBALS['bdd']->prepare('SELECT * FROM categorie');
     $stmt->execute();
@@ -69,7 +75,12 @@ function ID_and_nom_formateur() //cherche les ID et les nom de tout les formateu
     $stmt = $GLOBALS['bdd']->prepare('SELECT `id_user`, `nom` FROM `users` WHERE role = "formateur"');
     $stmt->execute();
     $result = $stmt->fetchall();
+<<<<<<< HEAD
     return $result;}
+=======
+    return $result;
+}
+>>>>>>> origin/master
 function IDcategorie_and_nomformation() //cherche les ID des catégories de formation et les noms des formations
 {
     $stmt = $GLOBALS['bdd']->prepare('SELECT `nom_formation`,`id_categorie` FROM `formation`');
@@ -98,8 +109,11 @@ function ID_and_nom_of_formateur() //cherche les ID et les noms de tout les form
 //     $result = $stmt->fetch();
 //     return $result;
 // }
+<<<<<<< HEAD
 $a = all_categorie();
 var_dump($a);
 
 $b = all_admin();
 var_dump($b);
+=======
+>>>>>>> origin/master
