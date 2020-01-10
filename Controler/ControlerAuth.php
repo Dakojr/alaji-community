@@ -47,7 +47,7 @@ if ($_GET['nom'] == "connect") {
 if ($_GET['nom'] == "register") {
     $email = filter_input(INPUT_POST, 'u_email', FILTER_SANITIZE_EMAIL);
     $password = filter_input(INPUT_POST, 'u_password', FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/"))); // regex miniscule et chiffre minimum 6 character max 18 charachter
-    $passworconfirm = filter_input(INPUT_POST, 'u_confirm_password', FILTER_DEFAULT);
+    $passworconfirm = filter_input(INPUT_POST, 'u_confirmer_password', FILTER_DEFAULT);
     $date_de_naissance= filter_input(INPUT_POST, 'u_date_de_naissance', FILTER_DEFAULT);
     $pays_de_naissance= filter_input(INPUT_POST, 'u_pays_de_naissance', FILTER_DEFAULT);
     $prenom = filter_input(INPUT_POST, 'u_prenom', FILTER_DEFAULT);
@@ -68,18 +68,18 @@ if ($_GET['nom'] == "register") {
         header('Location: ../Vue/inscription.php');
         die();
     }
-    if (!empty($_POST['u_email']) && !empty($_POST['u_password']) && !empty($_POST['u_confirm_password']) && !empty($_POST['u_date_de_naissance']) && !empty($_POST['u_nom']) && !empty($_POST['u_prenom'])) {
-        $stmt = $bdd->prepare('SELECT * FROM users WHERE email= :mail');
-        $stmt->bindParam("mail", $_POST['u_email']);
-        $stmt->execute();
+    if (!empty($_POST['u_email']) && !empty($_POST['u_password']) && !empty($_POST['u_confirmer_password']) && !empty($_POST['u_date_de_naissance']) && !empty($_POST['u_nom']) && !empty($_POST['u_prenom'])) {
+        $stmt = $bdd->prepare('SELECT * FROM users WHERE email= :mail');// requete vers database
+        $stmt->bindParam("mail", $_POST['u_email']);// requete vers database
+        $stmt->execute();// requete vers database
         $result = $stmt->fetch();
         if ($result == false) {
-            if (strtotime($dateTmp) > strtotime($_POST['u_daten'])) {
+            if (strtotime($dateTmp) > strtotime($_POST['u_date_de_naissance'])) {
                 if (filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,16}$/")))) {
-                    if ($_POST['u_password'] == $_POST['u_confirm_password']) {
+                    if ($_POST['u_password'] == $_POST['u_confirmer_password']) {
                         $hashage = password_hash($_POST['u_password'], PASSWORD_DEFAULT);
                         $stmt = $bdd->prepare("INSERT INTO users (email, password, date_de_naissance, nom, prenom) VALUES (?,?,?,?,?)");
-                        $stmt->execute(array($_POST['u_email'], $hashage, $_POST['u_date_de_maissance'], $_POST['u_nom'], $_POST['u_prenom'], 'eleves', 'une img path'));
+                        $stmt->execute(array($_POST['u_email'], $hashage, $_POST['u_date_de_maissance'], $_POST['u_nom'], $_POST['u_prenom'], 'eleves', 'une img'));
                         $_SESSION['error_msg'] = '';
                         header('Location: ../Vue/connexion.php');
                     } else {
