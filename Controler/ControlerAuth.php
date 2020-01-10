@@ -13,14 +13,14 @@ var_dump($_POST);
 
 if ($_GET['nom'] == "connect") {
     if (!empty($_POST['u_email']) && !empty($_POST['u_password'])) {
-        $stmt = $bdd->prepare('SELECT * FROM users WHERE email= :mail');
-        $stmt->bindParam("mail", $_POST['u_email']);
-        $stmt->execute();
+        $stmt = $bdd->prepare('SELECT * FROM users WHERE email= :mail');// requete vers database
+        $stmt->bindParam("mail", $_POST['u_email']);// requete vers database
+        $stmt->execute();// requete vers database
         $result = $stmt->fetch();
         if ($result !== false) {
             if (password_verify($_POST['u_password'], $result['password'])) {
                 // var_dump($result);
-                $_SESSION['user'] = $result;
+                $_SESSION['nom'] = $result;
                 // unset($_SESSION['error_msg']);
                 $_SESSION['error_msg'] = '';
                 header('Location: ../Vue/profil.php');
@@ -109,9 +109,9 @@ if ($_GET['nom'] == "register") {
     }
 }
 
-if ($_GET['name'] == 'deco') {
+if ($_GET['nom'] == 'deco') {
     session_start();
-    unset($_SESSION['user']);
+    unset($_SESSION['nom']);
     header("Location: ../Vue/index.php");
     die();
 }
