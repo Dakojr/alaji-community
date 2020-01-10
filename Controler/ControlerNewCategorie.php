@@ -9,7 +9,7 @@ var_dump($_POST);
 if (
     !empty($_POST['u_ncategorie'])
 ) {
-    $stmt = $bdd->prepare('SELECT * FROM categorie');
+    $stmt = $GLOBALS['bdd']->prepare('SELECT * FROM categorie');
     $stmt->execute();
     $result = $stmt->fetchall();
 
@@ -20,7 +20,7 @@ if (
         }
     }
     if ($controle == 0) {
-        $stmt = $bdd->prepare("INSERT INTO categorie (categorie) VALUES (?)");
+        $stmt = $GLOBALS['bdd']->prepare("INSERT INTO categorie (categorie) VALUES (?)");
         $stmt->execute(array($_POST['u_ncategorie']));
         $_SESSION['error_msg'] = '';
         header('Location: ../Vue/newCategorie.php');

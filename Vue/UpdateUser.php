@@ -1,6 +1,6 @@
 <?php
-require_once('../Modele/connect.php');
-session_start();
+require_once('../Controler/ControlerSQL.php');
+$c = all_users();
 
 $stmtuser = $bdd->prepare('SELECT * FROM users');
 $stmtuser->execute();
@@ -28,17 +28,21 @@ $resultuser = $stmtuser->fetchAll();
 
 
     <h1>Modification d'utilisateur</h1>
-
+<?php
+foreach ($c as $key => $value2) {
+    if ($value2["id_user"] == $_SESSION['user']){
+$resultrole = $value2["role"];}}
+?>
 
 
     <form action="../Controler/ControlerUpdateUser.php" method="post">
 
         <?php
-        if (isset($resultrole['role']) && $resultrole['role'] == "admin") {
+        if (isset($resultrole) && $resultrole == "admin") {
 
             echo "<select name='u_id_user'>";
            echo  "<option disabled selected value> -- selectionner un Utilisateur -- </option>";
-            foreach ($resultuser as $key => $value2) {
+            foreach ($c as $key => $value2) {
         ?>
                 <option value='<?php echo $value2["id_user"] ?>'><?php echo $value2["nom"] ?></option>
         <?php
