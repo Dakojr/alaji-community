@@ -31,18 +31,17 @@
 
         body {
             text-align: center;
-            background-color: #FEFEFE;
+            padding: 0;
+            margin: 0 auto;
+            background-image: url("http://getwallpapers.com/wallpaper/full/c/e/1/1053401-popular-crowd-wallpaper-1920x1080-for-htc.jpg");
         }
 
 
-
-        #main {
+        main {
             max-width: 1280px;
             min-height: 100%;
-            max-height: 600px;
             margin: 0 auto;
-            position: absolute;
-            overflow: auto;
+            position: relative;
         }
 
         .nav-item a {
@@ -55,6 +54,7 @@
             width: 75%;
             margin: 0 auto;
             box-shadow: 0px 0px 5px grey;
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
         .formations_content {
@@ -65,23 +65,25 @@
         }
 
         .intro {
-            margin:0 auto;
+            margin: 0 auto;
+            width: 70%;
+            text-align: justify;
+            padding-bottom: 20px;
         }
 
         footer {
             border-top: 2px solid #FDD835;
             background-color: black;
-            position: absolute;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
     </style>
 </head>
 
-<body>
-
+<header>
     <!--Navbar -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark border-bottom" style="background-color: #FDD835">
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark" style="background-color: #FDD835">
         <a class="navbar-brand" href="index.php"><img style="background-color: white; border-radius:200px;padding:5px;width:70px;" src="https://nsa40.casimages.com/img/2020/01/10/200110014602150184.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -117,14 +119,13 @@
         </div>
     </nav>
     <!--/.Navbar -->
+</header>
+
+<body>
     <main>
 
-        <h1 class="font-weight-bold" style="font-variant:small-caps;padding-top:5px;">Bienvenue sur ALAJI Community !</h1>
-        <p class="intro" style="width:75%;text-align:justify;">ALAJI Community, c'est Fieri, inquam, Triari, nullo pacto potest, ut non dicas, quid non probes eius, a quo dissentias. quid enim me prohiberet Epicureum esse, si probarem, quae ille diceret? cum praesertim illa perdiscere ludus esset. Quam ob rem dissentientium inter se reprehensiones non sunt vituperandae, maledicta, contumeliae, tum iracundiae, contentiones concertationesque in disputando pertinaces indignae philosophia mihi videri solent.
-
-            Itaque verae amicitiae difficillime reperiuntur in iis qui in honoribus reque publica versantur; ubi enim istum invenias qui honorem amici anteponat suo? Quid? Haec ut omittam, quam graves, quam difficiles plerisque videntur calamitatum societates! Ad quas non est facile inventu qui descendant. Quamquam Ennius recte.
-
-            Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus. Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.</p>
+        <h1 class="font-weight-bold" style="font-variant:small-caps;padding-top:10px;">Bienvenue sur ALAJI Community !</h1>
+        <p class="intro">ALAJI Community, c'est un concept né dans l'esprit bancal du Groupe 2 de la Formation de remise à niveau dans les métiers du numérique !</p>
 
         <a href="adminAccueil.php">Admin</a>
 
@@ -132,7 +133,7 @@
 
         <!-- FORMATIONS A PARTIR D'ICI -->
         <div class="formations">
-            <h3 class="font-weight-bold pt-3" style="font-variant:small-caps;">Nos Prochaines Formations;</h3>
+            <h3 class="font-weight-bold pt-3" style="font-variant:small-caps;">Les Prochaines Formations;</h3>
             <hr>
             <div class="formations_content" style="padding-bottom:5px;">
                 <div class="card w-25 p-3 m-3">
@@ -160,8 +161,8 @@
                     </div>
                 </div>
             </div>
-
     </main>
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -172,8 +173,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 
 </body>
-
-
 
 <!-- Footer -->
 <footer class="page-footer font-small pt-4">
@@ -189,8 +188,7 @@
 
                 <!-- Content -->
                 <h5 class="text-uppercase" style="color:#FDD835;"><i class="fas fa-angle-double-right"></i> ALAJI Formations</h5>
-                <p class="text-justify" style="padding-right:40px;">Gros texte d'la mortkitu pour présenter ALAJI eheheh MDR lol j'tombedemachaisedr Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina, ne nos quidem huic uni studio penitus umquam dediti fuimus. Etenim omnes artes, quae ad humanitatem pertinent, habent quoddam commune vinculum, et quasi cognatione quadam inter se continentur.
-
+                <p class="text-justify" style="padding-right:40px;">ALAJI est un organisme de formation qui intervient dans les domaines du sanitaire et social, du service à la personne, de la petite enfance, de la propreté, de la sécurité, du numérique, et de l’insertion socio-professionnelle. Notre organisme de formation détient les agréments et habilitations nécessaires pour dispenser des formations diplômantes et qualifiantes (diplômes d’état, titres professionnels…), ainsi que de la formation continue.
                 </p>
 
             </div>
