@@ -17,7 +17,8 @@ function all_categorie() //cherche tout les données de la table cétégorie
     require_once('../Modele/connect.php');
     $stmt = $bdd->prepare('SELECT * FROM categorie');
     $stmt->execute();
-    return ($result = $stmt->fetchall());
+    $result = $stmt->fetchall();
+    return $result;
 }
 
 function all_users() //cherche tout les données de la table users
