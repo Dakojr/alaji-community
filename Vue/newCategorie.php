@@ -1,10 +1,6 @@
 <?php
-require_once('../Modele/connect.php');
-session_start();
-$stmt = $bdd->prepare('SELECT * FROM categorie');
-$stmt->execute();
-$result = $stmt->fetchAll();
-
+require_once('../Controler/ControloerSQL.php');
+$a= all_categorie();
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +27,7 @@ $result = $stmt->fetchAll();
 
     <?php
     echo "Catégorie déja existante : " . "<br/>";
-    foreach ($result as $key => $value) {
+    foreach ($a as $key => $value) {
         echo $value["categorie"] . "<br/>";
     }
     ?>

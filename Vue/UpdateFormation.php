@@ -1,6 +1,9 @@
 <?php
 require_once('../Modele/connect.php');
 session_start();
+
+
+
 $stmt = $bdd->prepare('SELECT * FROM formation');
 $stmt->execute();
 $result = $stmt->fetchAll();
@@ -12,6 +15,8 @@ $resultcat = $stmtcat->fetchAll();
 $stmtuser = $bdd->prepare('SELECT * FROM users');
 $stmtuser->execute();
 $resultuser = $stmtuser->fetchAll();
+
+var_dump($resultcat);
 ?>
 
 <!DOCTYPE html>
@@ -59,8 +64,9 @@ $resultuser = $stmtuser->fetchAll();
     }
 
     if (isset($_POST['selectCategorie'])) {
-    echo "<form action='../Controler/ControlerUpdateFormation.php' method='post'>";
+        echo "<form action='../Controler/ControlerUpdateFormation.php' method='post'>";
         echo "<select name='u_id_formation'>";
+        echo "<option disabled selected value> -- Selectionner une formation-- </option>";
         foreach ($result as $key => $value1) {
             if ($_POST['selectCategorie'] == $value1["id_categorie"]) {
                 echo "<option value='" . $value1["id_formation"] . "'>" . $value1["nom_formation"] . "</option>";
@@ -70,8 +76,11 @@ $resultuser = $stmtuser->fetchAll();
         echo "</select>";
         echo "<br>";
         echo "<br>";
-        ?>
-         <input type="text" name="u_lieu" placeholder="Adresse de la Formation" id="">
+    ?>
+        <input type="text" name="u_nformation" placeholder="Nom de la Formation" id="">
+        <br>
+        <br>
+        <input type="text" name="u_lieu" placeholder="Adresse de la Formation" id="">
         <br>
         <br>
         <input type="text" name="u_nb_eleve_max" placeholder="Nombre d'eleve" id="">
@@ -89,6 +98,7 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner un Formateur :
         <br>
         <select name="u_id_user">
+        <option disabled selected value> -- Changer de Formateur -- </option>
             <?php
             foreach ($resultuser as $key => $value2) {
                 if ($value2["role"] == "formateur") {
@@ -104,30 +114,34 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner une Catégorie :
         <br>
         <select name="u_id_categorie">
+        <option disabled selected value> -- Changer de Catégorie -- </option>
             <?php
             foreach ($resultcat as $key => $value3) {
             ?>
                 <option value='<?php echo $value3["id_categorie"] ?>'><?php echo $value3["categorie"] ?></option>
-            <?php }
-        echo "<button type='submit'>Enregistrer!</button>";
-        echo "</form>";
-    }
-    ?>
-    
-    <?php
-    if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
-        echo '<p>' . $_SESSION['error_msg'] . '</p>';
-    }
-    ?>
+        
+        <?php }
+        echo "</select>" . "<br>" . "<br>";
 
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
+            echo "<button type='submit'>Enregistrer!</button>";
+            echo "</form>";
+        }
+        ?>
+
+        <?php
+        if (isset($_SESSION['error_msg']) && $_SESSION['error_msg'] != '') {
+            echo '<p>' . $_SESSION['error_msg'] . '</p>';
+        }
+        ?>
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/js/mdb.min.js"></script>
 </body>
 
 </html>

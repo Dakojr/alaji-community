@@ -1,17 +1,27 @@
 <?php
-require_once('../Modele/connect.php');
-session_start();
-$stmt = $bdd->prepare('SELECT * FROM formation');
-$stmt->execute();
-$result = $stmt->fetchAll();
+require_once('../Controler/ControlerSQL.php');
+$c = IDcategorie_and_nomformation();
+$a = all_categorie();
+$b = ID_and_nom_of_formateur();
 
-$stmtcat = $bdd->prepare('SELECT * FROM categorie');
-$stmtcat->execute();
-$resultcat = $stmtcat->fetchAll();
 
-$stmtuser = $bdd->prepare('SELECT * FROM users');
-$stmtuser->execute();
-$resultuser = $stmtuser->fetchAll();
+
+
+die();
+
+// die();
+
+// $stmt = $bdd->prepare('SELECT * FROM formation');
+// $stmt->execute();
+// $result = $stmt->fetchAll();
+
+// $stmtcat = $bdd->prepare('SELECT * FROM categorie');
+// $stmtcat->execute();
+// $resultcat = $stmtcat->fetchAll();
+
+// $stmtuser = $bdd->prepare('SELECT * FROM users');
+// $stmtuser->execute();
+// $resultuser = $stmtuser->fetchAll();
 
 
 ?>
@@ -39,9 +49,9 @@ $resultuser = $stmtuser->fetchAll();
     <?php
     echo "Catégorie: " . "<br/>";
     echo "<br>";
-    foreach ($resultcat as $key => $value) {
+    foreach ($a as $key => $value) {
         echo $value["categorie"] . "<br/>";
-        foreach ($result as $key => $value1) {
+        foreach ($c as $key => $value1) {
             if ($value["id_categorie"] == $value1["id_categorie"]) {
                 echo $value1["nom_formation"] . "<br/>";
             }
@@ -71,14 +81,12 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner un Formateur :
         <br>
         <select name="u_id_user">
+        <option disabled selected value> -- selectionner un Formateur -- </option>
             <?php
-            foreach ($resultuser as $key => $value2) {
-                if ($value2["role"] == "formateur") {
-
+            foreach ($b as $key => $value2) {
             ?>
                     <option value='<?php echo $value2["id_user"] ?>'><?php echo $value2["nom"] ?></option>
             <?php }
-            }
             ?>
         </select>
         <br>
@@ -86,8 +94,9 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner une Catégorie :
         <br>
         <select name="u_id_categorie">
+        <option disabled selected value> -- Selectionner une Catégorie -- </option>
             <?php
-            foreach ($resultcat as $key => $value3) {
+            foreach ($a as $key => $value3) {
             ?>
                 <option value='<?php echo $value3["id_categorie"] ?>'><?php echo $value3["categorie"] ?></option>
             <?php }
