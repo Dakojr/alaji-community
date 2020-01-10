@@ -95,7 +95,7 @@ var_dump($a);
         <select name="u_id_categorie">
         <option disabled selected value> -- Selectionner une Catégorie -- </option>
             <?php
-            foreach ($resultcat as $key => $value3) {
+            foreach ($a as $key => $value3) {
             ?>
                 <option value='<?php echo $value3["id_categorie"] ?>'><?php echo $value3["categorie"] ?></option>
             <?php }
