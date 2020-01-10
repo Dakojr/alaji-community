@@ -34,11 +34,6 @@ session_start();
         <input type="text" name="u_prenom" id="" placeholder="prénom">
         <br>
         <br>
-        <select name="u_role">
-            <option value="admin">Admin</option>
-        </select>
-        <br>
-        <br>
         <input type="date" name="u_date_de_naissance" id="" placeholder="Date de naisance">
         <br>
         <br>                     
@@ -46,6 +41,7 @@ session_start();
         <br>
         <br>
         <select name="u_sexe">
+        <option disabled selected value> -- Selectionner le Sexe -- </option>
             <option value="Femme">Femme</option>
             <option value="Homme">Homme</option>
             <option value="Autre">Autre</option>

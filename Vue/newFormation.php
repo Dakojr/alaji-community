@@ -71,6 +71,7 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner un Formateur :
         <br>
         <select name="u_id_user">
+        <option disabled selected value> -- selectionner un Formateur -- </option>
             <?php
             foreach ($resultuser as $key => $value2) {
                 if ($value2["role"] == "formateur") {
@@ -86,6 +87,7 @@ $resultuser = $stmtuser->fetchAll();
         Selectionner une Catégorie :
         <br>
         <select name="u_id_categorie">
+        <option disabled selected value> -- Selectionner une Catégorie -- </option>
             <?php
             foreach ($resultcat as $key => $value3) {
             ?>
