@@ -23,12 +23,13 @@ if ($_GET['nom'] == "connect") {
         $result = $stmt->fetch();
         if ($result !== false) {
             if (password_verify($_POST['u_password'], $result['password'])) {
-                 //var_dump($result);
+                //  var_dump($result);
                 $_SESSION['nom'] = $result;
                 // unset($_SESSION['error_msg']);
                 $_SESSION['error_msg'] = '';
                 header('Location: ../Vue/profil.php');
             } else {
+                // mauvaise mot de passe 
                 $_SESSION['error_msg'] = 'mauvais mot de passe';
                 header('Location: ../Vue/connexion.php');
                 die();
