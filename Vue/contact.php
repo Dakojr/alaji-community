@@ -36,6 +36,7 @@
 </head>
 
 <body>
+    <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark border-bottom" style="background-color: #FDD835">
         <a class="navbar-brand" href="index.php"><img style="background-color: white; border-radius:200px;padding:5px;width:70px;" src="https://nsa40.casimages.com/img/2020/01/10/200110014602150184.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,22 +46,28 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <span class="sr-only">(current)</span>
-                    </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn-link rounded-pill" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formations</a>
+                    <a class="nav-link dropdown-toggle btn-link rounded-lg ml-3 p-4 text-dark" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Formations</a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                         <a class="dropdown-item waves-light" href="#">Toutes les formations</a>
                         <a class="dropdown-item waves-light" href="#">Formations par catégories</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle btn-link rounded-lg ml-3 p-4 text-dark" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profil</a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                        <a class="dropdown-item waves-light" href="#">Link1</a>
+                        <a class="dropdown-item waves-light" href="#">Link2</a>
+                    </div>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto nav-flex-icons">
                 <li class="nav-item">
-                    <a class="nav-link waves-light btn-link rounded-circle" href="inscription.php">Inscription</a>
+                    <a class="nav-link waves-light btn-link rounded-lg mr-3 p-4 text-dark" href="inscription.php">Inscription</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link waves-light btn-link rounded-circle" href="connexion.php">Connexion</a>
+                    <a class="nav-link waves-light btn-link rounded-lg mr-3 p-4 text-dark" href="connexion.php">Connexion</a>
                 </li>
             </ul>
         </div>
