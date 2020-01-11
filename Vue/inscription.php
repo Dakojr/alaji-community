@@ -18,10 +18,7 @@
 
 
 
-    <h1>Bonjour à tous les Alajiens !</h1>
-    <p>inscription</p>
-    <p>Rejoins nous !!!!</p>
-    <p>ait confiance !!!</p>
+    <h1>inscription</h1>
 
     <form method="post" action="../Controler/ControlerAuth.php?nom=register">
         Email : <input type="mail" name="u_email" size="12"><br>
