@@ -178,6 +178,7 @@ function trois_prochaine_formation() // cherche le noms des trois prochaine form
             array_push($s,$value);
         }
     }
+    var_dump($s);
 }
 
 $c = trois_prochaine_formation();
